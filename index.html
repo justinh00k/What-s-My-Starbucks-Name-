@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="<?php echo substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) ?>" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>What's My Starbucks Name?</title>
+
+    <link rel="stylesheet" href="stylesheet.css" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower" type='text/css' />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="image_src" href="https://www.whatsmystarbucksname.com/img/logo-w.png" />
+
+    <meta name="description" content="The world's most popular Starbucks name generator." />
+    <meta name="keywords" content="what's my starbucks name, starbucks name generator, starbucks cups, baristas, barista fail, misspellings, game, lol, starbucks spelling, what's your starbucks name, justin hook, google feud, quiz, buzzfeed" />
+    <meta name="author" content="justin hook" />
+    <meta name="robots" content="index, nofollow" />
+
+    <meta property="og:type" content="website" />
+
+    <meta property="og:description" content="How will a barista get your name wrong? Found out at WhatsMyStarbucksName.com." />
+
+    <meta name="twitter:card" content="photo" />
+    <meta name="twitter:site" content="@justinhook" />
+
+
+    <?php 
+         if(isset($_GET['cup'])) 
+         {
+         
+         $names = ["cindy", "gabrie", "maylessa", "foxy", "farla", "brie", "darth", "royland", "ruth", "jerica", "stacy", "gho", "kay", "yerza", "caol", "bucky", "ginina", "ganerle", "marlov", "gaga", "joeana", "kelsy", "keith", "don", "tatayana", "madilyn", "juliana", "mary", "", "titan", "jaston", "merissa", "whilm", "groupie", "pam", "lemathe", "worin", "jenis", "millisia", "alexus", "montanmy", "cary", "steave", "collie", "nochin", "amada", "tandul", "meka", "jesse", "ambus", "haiti", "jennica", "alis", "debra", "sharrie", "karly", "boosha", "ploga", "katherine", "bruse", "", "debra", "methbeth", "kendif", "kio", "evane", "evon", "alien", "maritsa", "merissa", "mellisa", "miritsa", "larissa", "mayitza", "manul", "dhola", "lole", "shaggy", "greg", "aiden", "lazy", "pricella", "lin", "kris-chin", "roff", "granole", "horbael", "hobart", "homar", "omae", "sue", "jei", "beridet", "gio", "arin", "camilla", "men", "jerame", "jhanette", "jeren", "jerried", "jorry", "", "prijah", "priyah", "priya", "kalire", "idus", "louise", "loius", "louies", "louis", "weilan", "jolly", "jill", "lidnsy", "heinl", "pollen", "meanid", "rackel", "rocelle", "estefoni", "darren", "cody", "highway", "brino", "casn", "ellen", "keilo", "cage", "isa", "elissan", "holga", "sweter", "jordg", "gina", "fullta", "sharonica", "", "enuzie", "darcy", "parkus", "rish", "jallet", "", "jaret", "janette", "vanet", "alexon", "rush", "akizzen", "kinth", "themile", "jermiel", "brokee", "perla", "violut", "evil", "recrele", "pee", "judy", "?1", "briz", "boner", "raksen", "mufgarith", "jen", "pinkus", "danielle", "jooke", "math", "ad", "danno", "curyn", "elianza", "olle", "chilelle", "", "parker", "gayna", "baltimore", "jane", "louk", "oha", "aña", "aarad", "slitch", "emilly", "voota", "dendt", "frota", "chlob", "lauren", "mitchell", "metchat", "elysia", "jet", "kahee", "blibe", "nellis", "deja", "natilia", "phyllis", "chelsie", "cyndi", "shareena", "terv", "taffy", "malene", "nabil", "noira", "bripney", "jade", "salene", "hospie", "crason", "quess", "dingo", "michel", "jen", "shanu", "", "grena", "toshy", "ausie", "micheal", "coop", "nikki", "korin", "millysa", "collene", "dean", "tyler", "cristin", "tusash", "edlir", "shunna", "caotlyne", "", "holland", "phobee", "fee", "nur", "raja", "mali", "piag", "dami", "erick", "fiola", "lazey", "alie", "gym", "erie", "alas", "aevarth", "joline", "jaline", "tina", "lineth", "racheal", "blkursty", "julie", "ken", "sum", "dasta", "kerstin", "quine", "ketlin", "olga", "an", "gloria", "joshpe", "drega", "casidy", "blant", "racson", "luaren", "lily", "polly", "brendra", "baioy", "agustine", "super", "marques", "laycee", "kad", "roi", "nicole", "warton", "charlene", "gevonu", "merash", "rechealle", "katelan", "grel", "virgin", "ferensiz", "elauiner", "fioang", "gianna", "", "matiy", "maggie", "yunis", "lilly", "dobi", "add", "norm", "cherice", "nate", ":)", "lee", "lisa", "kyra", "joymi", "", "maritha", "britney", "kaly", "panara", "jeuels", "subien", "krisdna", "kyle", "ramheal", "bernie", "mexico", "juile", "arie", "justine", "merasha", "sillian", "allibia", "damella", "chelsie", "galda", "katlen", "maxil", "denese", "brett", "marrisy", "schieller", "duviol", "maira", "tyra", "cusey", "jordan", "naddie", "graig", "leah", "lora", "kiff", "barrufio", "", "mayo", "kuleo", "idel", "arial", "laurent", "airin", "michaell", "jazmin", "beuy", "?2", "holly", "pitea", "gary", "kathline", "auto", "collie", "joolee", "coline", "boe", "po", "hayde", "devin", "lunie", "feiw", "kalan", "cyndi", "capon", "dione", "any", "whendee", "fill", "gaylynn", "krysen", "kurth", "fible", "kindrie", "kyle", "ain", "mamad", "hiedi", "lint", "ilean", "judy", "debora", "danyur", "platen", "nehn", "naija", "parson", "carsie", "narson", "carston", "anny", "reel", "sheryl", "laynton", "erie", "kaylo", "coul", "kaid", "at", "son", "may lei", "tranquil", "trinke", "torri", "alj", "sandra", "adria", "jean", "randle", "aluha", "andria", "brnie", "melo", "jackie", "derrke", "karren", "kim", "pina", "margarette", "havan", "tylor", "kae", "carollne", "", "becon", "killy", "kathren", "zues", "lizza", "aleixis", "samie", "sharmena", "har", "trissa", "rihanne", "sherry", "rutnia", "rafio", "kaysea", "juily", "lexy", "danial", "nas", "henna", "gerage", "nay", "lotria", "erina", "kis", "brea", "gory", "rio", "lexus", "kel", "paehc", "charolette", "mya", "courtenay", "batt", "kristen", "re", "judis", "allen", "kathleen", "anvthyst", "javier", "debra", "lien", "kale", "harii", "sharlotte", "alician", "elkry", "", "stephanie", "alen", "dirian", "lettuces", "cloey", "vasak", "mourine", "eing", "juanneena", "melissa", "jolina", "samartha", "jane", "hopal", "creige", "ailisig", "lexin", "harvey", "feny", "nesta", "allies", "leana", "broatey", "stewen", "dane", "coley", "reese", "beyanka", "laura", "skayler", "meggie", "peter", "elena", "lee", "pole", "isla", "smeilene", "keny", "mayhuh", "lorraina", "duck", "gioven", "harriet", "brick", "kumtar", "encear", "portiric", "tefamy", "raymond", "charlie", "holena", "brabnello", "christin", "mychell", "lorry", "lorhen", "hai", "lorrie", "lory", "lora", "ingris", "michael", "t", "naun", "barlen", "trishian", "catrine", "emily", "olive", "lory", "estefani", "aeanne", "larrisa", "leuian", "maranne", "rem", "lara", "clarif", "damon", "zohi", "jeph", "packy", "rebeka", "ton", "tim", "daniel", "kirim", "rotci", "jepui", "zui", "whell", "chelsea", "herald", "clif", "iolin", "doo", "syntheia", "chake", "cathine", "robert", "", "", "football", "ciriria", "matra", "sabata", "no", "wailml", "", "shalet", "alice", "gilan", "ten", "chelbie", "zimond", "kelly", "cynthia", "denisse", "alian", "lorie", "maurice", "bat", "hutt", "chamber", "?3", "paul", "brianne", "kaila", "steve", "luz", "davis", "bita", "winday", "steph]", "gabby", "death", "metchal", "shaggy", "evie", "courtenay", "alis", "lynonn", "deauh", "l", "leanna", "adi", "lindsay", "france", "silwia", "kitty", "", "rabin", "uon", "heliy", "rebign", "jod", "gud", "mary", "nynia", "maggy", "sophaya", "iailt", "radell", "batman", "dennie", "reipar", "adem", "star", "breona", "traviz", "bionka", "macke", "rolling", "brignette", "ezabell", "rowmen", "robicca", "dian", "shat", "bod", "din", "carrie", "carry", "caitlin", "trasy", "wong", "booja", "titty", "nemo", "imogem", "kotry", "arar", "?4", "caroon", "carsey", "jen", "catmrine", "lurel or lourvel or lorel", "fibi", "linett", "divn", "ricon", "bror", "jene", "jain", "pihti", "ghana ", "neo", "esthefi", "ribay", "lory", "magen", "arika", "saull", "marn", "winona", "ram", "reackel", "kimbrly", "weell", "edwin", "lesi", "?5", "aleey", "amely", "mareen", "maconda", "kathline", "golden", "candles", "seyia", "ralsea", "sardin", "boneem", "rhiana", "aaron", "cheo", "drue", "kaik", "donna", "khaley", "urserlla", "chann", "muranda", "daisy", "haten", "hkolleane", "cinthea", "bruk", "machille", "lizu", "einesha", "valiry", "meg", "kaylob", "estbelk", "kelvin", "scoth", "erine", "cean", "aren", "rebel", "kaitlann", "kate", "jimmy", "rebekha", "gean", "margie", "chetta", "hundres", "alexison", "johnnie", "june", "alliyah", "entoiad", "lora", "aleson", "ashe", "styles", "favor", "alicia", "jone", "evan", "kitten", "aaron", "blass", "pena", "anna", "yesua", "katlyn", "penai", "eric", "corrola", "missle", "kayla", "mac", "iris", "elyca", "shillby", "flow", "lei", "vibi", "vebee", "kiera", "lydsney", "babela", "alax", "manly", "jean", "mess", "polo", "gloria", "sab", "haryt", "perry", "heriett", "picksie", "steaven", "voldamort", "nan", "mikenski", "petti", "dalphy", "mkcenzie", "dia", "thei", "rubiap", "gilu", "patrisha", "kardine", "kane", "diane", "jema", "mad-ah-lynn", "pigo", "sailor", "ibellium", "gib", "tuckilya", "spanser", "karmin", "allen", "aleashia", "lya", "mykala", "lylos", "gaherlott", "mila", "liyi", "lailo", "cheft", "berra", "litzy", "easy", "vocsan", "fimbpy", "chole", "prik", "blan", "wlio", "sarry", "dillian", "pony", "jone", "ive", "boris", "jail", "aby", "heidi", "barry", "giggles", "darlul", "amanda", "besty", "fili", "ileen", "gasca", "tiphony", "martheful", "laria", "chelsea", "a-me", "player", "giny", "verginya", "molten", "mavdat", "kristil", "rebecka", "cherry", "harold", "hazul", "cyedny", "ezibella", "quartney", "raghleigh", "berry", "poiest", "chelsay", "cats", "careen", "karson", "carson", "carsud", "buddy", "cendy", "shubh", "gurry", "sharlet", "diki", "berk", "leften", "ridge", "dayan", "apizy", "aubrey", "tanner", "gia", "earn", "almond", "sonla", "garey", "glorin", "parker", "wang", "amnika", "fornetta", "o", "kollen", "vanilia", "aliz", "downy", "lid", "emmie", "dash", "elisa", "eric", "", "imie", "ejay", "wayne", "cheeshy", "alican", "dairius", "azath", "jeff", "molley", "bristiba", "bobro", "ari inn", "auch", "adrain", "collin", "baniel", "germine", "nittley", "tac", "carline", "ashleey freed", "jatin", "jeff", "prornwin", "sewd", "sonla", "any", "marice", "carolyn", "reclier", "olorn", "moron", "rabi", "helen", "phobia", "daze", "", "jusel", "gaiea", "joyse", "elaink", "zoey", "keith", "partha", "nali", "jazimin", "spina", "jacell", "pebba", "loen", "tesale", "danine", "gaillon", "katheran", "honey connie", "prina", "megan", "briayan", "moti", "santa", "meloney", "eursela", "carfy", "?6", "louisee", "riber", "maress", "", "debbie", "belutia", "corolrian", "primrose everdeen", "presly", "passion", "heather", "samen", "yelena", "paritsa", "pastry", "lery", "penellipie", "lidia", "corel", "syarah", "kateland", "rocsi", "perisa", "baricia", "daninel", "blad", "rod", "vadler", "creag", "erich", "marbra", "libral", "gazelle", "gab", "sahara", "cardinal", "mog", "mudule", "jaramie", "leoues", "", "alex", "deny", "broke", "sanje", "tatna", "lousie", "ebbie", "donie", "grof", "spirow", "trug", "alien", "rola", "tary", "evan", "en", "jen", "sasealya", "nick", "rat", "botchada", "livra", "tez", "crustle", "dunal", "lorry", "", "seara", "seara", "ecky", "lynn", "vergona", "ketty", "sherril", "ailson", "jd", "brain", "meow", "mogone", "janiver", "stayc", "parlcu", "heleoren", "apron", "haypu", "vawl", "pony", "jasitan", "shirry", "pallapi", "gale", "mat", "bunksha", "christen", "polly", "chrisben", "ilisia", "fam", "hartsan", "carsan", "wid", "steey", "carsey", "cale", "ciady", "sherry", "metchul", "borin", "angie", "janna", "lyzeth", "madellin", "ralph", "eriall", "joed", "syreena", "alice", "dreyo", "nichol", "justine", "renarldo", "lilyen", "carlee", "", "leia", "han", "lanea", "ales", "kris", "brigittta", "natasha", "malon", "riana", "eric", "corrie", "lindsey lohan", "its renee", "kathlein", "rinaldo", "natie", "megan", "angler", "", "brigitta", "tool", "litia", "hellen", "anie", "joan", "gabby", "dave", "pollen", "chancuer", "statlley", "jesice", "sjiann", "johin", "pula", "xena", "danyele", "aruse", "rebecca", "mitus", "", "jaques", "trich", "mullen", "carlene", "christen", "debbie", "mia", "shontel", "bakkie", "cristmian", "anger", "shopra", "olbama", "niclla", "coby", "eeron", "renold", "lisa", "l.e.", "anecia", "spuscun", "emelly", "ryss", "brian", "magan", "isla", "correy", "rute", "surly", "mary", "zui", "nia", "leennn", "froncine", "chatal", "diego", "sales", "mierla", "alers", "sherlun", "stia", "cathrine", "e", "keiti", "may", "evelin", "quib", "cloie", "haceldie", "shavan", "shaniqua", "auntie", "adry", "pam", "venisha", "falestha", "felcira", "alishia", "philesha", "?7", "fillionna", "jilly", "maian", "amely", "parris", "christol", "shrille", "wrreck", "gosh", "gris", "malo", "suazei", "gylan", "aaron", "pork", "kay", "katty", "jami", "ashton", "ellen", "gretta", "casid-e", "chippy", "mad", "awhina", "", "broke", "genus", "ashley", "cherry ann", "cionet", "gena", "janie", "jill", "jordan", "naija", "reese", "sharlet", "steff", "susy", "treresa", "tyler", "hiati", "alivia","anatira","azarat","bodd","candance","catiran","chras","clowy","colon","curli","danilla","denis","eantha","easy","eber","eder","emsi","feline","folen","garim","griely","haphme","hater","iney","jannett","kenya","keydi","lebi","lenuy","liao","lisdsey","lola","lonye","mara","marrick","wye","murray","myllysa","pensa","phillidia","pit","que","semen","shear","tennis","wallup","withney"];
+         
+
+         $cupnum = $_GET['cup'];
+         $name =  ucwords(urldecode($names[$cupnum-1]));
+         
+         echo '<meta property="og:title" content="My Starbucks name is &quot;'.$name.".&quot; What's yours?\"/>\n";
+         echo '<meta property="og:image" content="https://www.whatsmystarbucksname.com/img-w/'.urldecode($_GET['cup']).'.jpg"/>'."\n";
+         echo '<meta property="twitter:title" content="My Starbucks name is &quot;'.$name.".&quot; Get yours at WhatsMyStarbucksName.com\"/>\n";
+         echo '<meta property="twitter:image" content="https://www.whatsmystarbucksname.com/img-w/'.urldecode($_GET['cup']).'.jpg"/>'."\n";
+         echo '<meta property="og:url" content="https://www.whatsmystarbucksname.com/?cup='.$cupnum.'"/><meta name="twitter:url" content="https://www.whatsmystarbucksname.com/?cup='.$cupnum.'" />';
+
+         }
+         else
+         {
+echo '<meta property="og:url" content="https://www.WhatsMyStarbucksName.com/"/><meta name="twitter:url" content="https://www.whatsmystarbucksname.com/" />';
+
+         echo '<meta property="og:title" content="What\'s My Starbucks Name?"/>'."\n";
+         echo '<meta property="og:image"  content="https://www.whatsmystarbucksname.com/img/logo-w.png"/>'."\n";
+         
+         echo '<meta name="twitter:image" content="https://www.whatsmystarbucksname.com/img/logo-w.png" />'."\n";
+         echo '<meta name="twitter:title" content="What\'s Your Starbucks Name? Find out what your cup says." />'."\n";
+    	 echo '<meta name="twitter:image:width" content="1200" />'."\n";
+	 echo '<meta name="twitter:image:height" content="630" />'."\n";
+         }
+         
+         $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+             
+         ?>
+
+
+</head>
+
+<body id="bgimage">
+
+    <div id="dimmer"> </div>
+
+    <div id="wrapper">
+        <a href="https://www.whatsmystarbucksname.com"><img src="https://www.whatsmystarbucksname.com/img/logo<?php
+			
+			switch ($lang){
+			   
+			    
+			    case "pt":
+			    echo "-pr";
+break;
+			   
+			   case "de":
+			   echo "-de";
+			   break;
+
+			   case "fr":
+			       echo "-fr";
+			        break;
+		
+	                   case "es":
+			      echo "-es";
+break;
+			   
+                            case "en":
+			        break;        
+			   
+                           default:
+			      break;
+			}
+			?>.png" alt="What's My Starbucks Name?" id="logo" /></a>
+        <div id="resultswrapper">
+            <div id="preresults">
+                <p id="preorder">
+
+                    “
+                    <?php
+			
+			switch ($lang){
+			   
+			    
+			    case "pt":
+			    echo "Posso obter um nome para o seu fim?";
+break;
+			   
+			   case "de":
+			   echo "Kann ich einen Namen für Ihre Bestellung erhalten?";
+			   break;
+
+			   case "fr":
+			       echo "Puis-je obtenir un nom pour votre commande?";
+			        break;
+		
+	                   case "es":
+			      echo "¿Puedo obtener un nombre para su pedido?";
+break;
+			   
+                            case "en":
+			        echo "Can I get a name for your order?";
+			        break;        
+			   
+                           default:
+			      echo "Can I get a name for your order?";
+			      break;
+			}
+			?>”
+
+                </p>
+                <input value="" id="getname" tabindex="1" />
+                <a id="go" tabindex="2" href="javascript:showResult()"></a>
+            </div>
+            <div id="results">
+                <span id="yourpicture"> </span> <br />
+                <span id="yourorder"></span>
+                <div id="resultsmore">
+                    <a href="javascript:showResult()"><img src="img/newdrink.png" alt="That's not what I ordered." />
+                        <?php
+			
+			switch ($lang){
+			       
+			    case "pt":
+			    echo "Isso não é o que eu pedi.";
+break;
+			    
+			  
+			   case "de":
+			   echo "Das ist nicht, was ich bestellte.";
+			  break;
+
+			    case "fr":
+			       echo "Ce ne est pas ce que je ai commandé.";
+			        break;
+			  
+			    case "es":
+			      echo "Eso no es lo que pedí.";
+break;
+			   
+                          case "en":
+			        echo "That's not what I ordered.";
+			        break; 
+       
+			    default:
+			      echo "That's not what I ordered.";
+			      break;
+			}
+			?>
+                    </a>
+                    <a id="exit" href="javascript:newGame()"><img src="img/exit.png" alt="Try A Different Starbucks." />
+                        <?
+switch ($lang){
+			   
+			    
+			    case "pt":
+			    echo "Tente um Starbucks diferente.";
+break;
+			    
+			   
+			   
+			   case "de":
+			   echo "Versuchen Sie eine Starbucks.";
+			  break;
+
+			    case "fr":
+			       echo "Essayez un autre Starbucks.";
+			        break;
+			   
+			    case "es":
+			      echo "Pruebe con un Starbucks diferente.";
+break;
+
+			    case "en":
+			        echo "Try A Different Starbucks.";
+			        break;        
+
+			    default:
+			      echo "Try A Different Starbucks.";
+			      break;
+			}
+			?>
+                    </a>
+                </div>
+                <div id="postshare">
+                    <a href="javascript:fbShare()"><img src="img/facebook.gif" id="fbbtn" alt="Share your results on Facebook." /></a>
+                    <a id="twittershare"><img src="img/twitter.gif" id="twitterbtn" alt="Share your results on Twitter." /></a>
+
+                    <a id="tumblrshare" onclick="javascript:window.open(this.href,
+                     '', 'menubar=no,toolbar=no,resizable=yes');return false;"><img src="img/tumblr.gif" id="tumblrbtn" alt="Share your results on Tumblr." /></a>
+                    <a id="pshare" onclick="javascript:window.open(this.href,
+                     '', 'menubar=no,toolbar=no,resizable=yes');return false;"><img src="img/pinterest.gif?1" id="pbtn" alt="Share your results on Pinterest." /></a>
+
+                </div>
+            </div>
+            <div class="clearing"></div>
+        </div>
+
+
+        <div id="starbucks" style="width: 800px; margin: 0 auto 500px; position: relative; top: 300px; background-color: rgba(255,255,255,.9); border: 6px solid #006341; padding: 25px;">
+
+
+            <a href="http://s.trdcfe.me/twQ7N" target="_blank"><img src="https://res.cloudinary.com/roastcollective/image/upload/fl_progressive:steep,q_auto:good/f_auto/v1543341813/web/homepage/homepage-hero-list-item-3" style="float: left; width: 250px; margin: -2rem; border: 0" /></a>
+            <p style="width: 500px; font-size: 25px; float: left; margin-left: 40px; text-align: left;">Get fresh-roasted coffee from the very best coffee companies, delivered to your door for less than purchasing in-store! Use <a target="_blank" href="http://s.trdcfe.me/twQ7N"><b>this link</b></a> to get 50% off your first order!</p>
+
+            <div class="clearing"></div>
+
+        </div>
+
+
+
+
+
+        <div id="footer">
+            <div id="sharebuttons">
+                <div id="shareme" data-url="https://www.whatsmystarbucksname.com/" data-text="How will a barista screw up your name? Find out at WhatsMyStarbucksName.com."></div>
+            </div>
+            <div class="clearing"></div>
+
+
+            <div id="drinksserved">Over <span id="totaldrinks">
+                
+               20,000,000
+                </span> drinks served!</div>
+            -->
+
+            <div id="siteby">site by <a href="https://www.twitter.com/justinhook" target="_blank">justin hook</a>. <br />
+                <span id="photosby">background photo <a href="https://creativecommons.org/licenses/by/2.0/legalcode" target="_blank"><img src="img/cc1.svg" onerror="this.onerror=null; this.src='img/cc1.gif' alt="Creative Commons" /></a> <a href="https://creativecommons.org/licenses/by/2.0/legalcode" target="_blank"><img src="img/cc2.svg" onerror="this.onerror=null; this.src='img/cc2.gif' alt="BY 2.0" id="cc2" /></a>  by <span id="bgauthor"></span>.
+                cup photos provided by <a href="https://starbucksspelling.tumblr.com/" target="_blank">jenna livingston</a> and <a href="https://starbucksnamefail.tumblr.com/" target="_blank">laurie denness</a>.</span>
+            </div>
+        </div>
+        <!-- footer -->
+
+    </div>
+    <!-- page wrapper -->
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.sharrre.min.js"></script>
+    <script type="text/javascript" src="starbucksname.js"></script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-61876860-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
